@@ -56,3 +56,8 @@ logs/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Git auto-sync tools
+gitwatch.sh
+git-auto-sync.py
+*.auto-sync
