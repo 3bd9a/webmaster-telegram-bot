@@ -1,14 +1,16 @@
-# 🤖 WebMaster Bot - أفضل بوت تنزيل المواقع في تيليجرام
+# 🤖 WebMaster Telegram Bot - Advanced Edition
 
 <div align="center">
 
 ![WebMaster Bot](https://img.shields.io/badge/WebMaster-Bot-blue?style=for-the-badge&logo=telegram)
 ![Python](https://img.shields.io/badge/Python-3.8+-green?style=for-the-badge&logo=python)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+![Docker](https://img.shields.io/badge/Docker-Ready-blue?style=for-the-badge&logo=docker)
+![Prometheus](https://img.shields.io/badge/Monitoring-Prometheus-orange?style=for-the-badge&logo=prometheus)
 
-**بوت تيليجرام متقدم لتنزيل المواقع الكاملة مع دعم JavaScript الكامل**
+**🚀 بوت تيليجرام متطور لتنزيل المواقع الكاملة - نسخة محسنة ومطورة**
 
-[🚀 البدء السريع](#-البدء-السريع) • [📋 المميزات](#-المميزات) • [⚙️ التثبيت](#️-التثبيت) • [📖 الاستخدام](#-الاستخدام) • [🤝 المساهمة](#-المساهمة)
+[🚀 البدء السريع](#-البدء-السريع) • [✨ المميزات المتقدمة](#-المميزات-المتقدمة) • [🏗️ الهيكلة](#️-الهيكلة) • [⚙️ التثبيت](#️-التثبيت) • [🐳 Docker](#-docker) • [📊 المراقبة](#-المراقبة)
 
 </div>
 
@@ -71,8 +73,8 @@ pip --version
 
 1. **استنساخ المشروع**
 ```bash
-git clone https://github.com/yourusername/web-bot-main.git
-cd web-bot-main
+git clone https://github.com/yourusername/webmaster-telegram-bot.git
+cd webmaster-telegram-bot
 ```
 
 2. **إنشاء بيئة افتراضية**
