@@ -1,0 +1,29 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'webmaster-bot'
+    static_configs:
+      - targets: ['webmaster-bot:8001']
+    scrape_interval: 30s
+    metrics_path: /metrics
+
+  - job_name: 'webmaster-bot-health'
+    static_configs:
+      - targets: ['webmaster-bot:8000']
+    scrape_interval: 60s
+    metrics_path: /health
+
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['redis:6379']
+    scrape_interval: 30s

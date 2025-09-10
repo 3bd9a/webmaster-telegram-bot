@@ -5,6 +5,7 @@ import asyncio
 from datetime import datetime, timedelta
 import time
 from typing import Dict, Optional
+from collections import defaultdict
 
 # استيرادات محسنة
 from services.downloader import WebsiteDownloader

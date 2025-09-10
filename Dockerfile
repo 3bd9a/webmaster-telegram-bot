@@ -1,29 +1,33 @@
-FROM python:3.11-slim
+# استخدام صورة Playwright الرسمية
+FROM mcr.microsoft.com/playwright/python:v1.40.0-jammy
 
+# تعيين متغيرات البيئة
+ENV PYTHONUNBUFFERED=1 \
+    PLAYWRIGHT_BROWSERS_PATH=/ms-playwright \
+    DEBIAN_FRONTEND=noninteractive
+
+# تعيين مجلد العمل
 WORKDIR /app
 
-# تثبيت dependencies النظام
-RUN apt-get update && apt-get install -y \
-    wget \
-    gnupg \
-    unzip \
+# تثبيت تبعيات النظام
+RUN apt-get update && apt-get install -y --no-install-recommends \
     libmagic1 \
-    curl \
     && rm -rf /var/lib/apt/lists/*
 
-# تثبيت المتصفح أولاً
-RUN pip install playwright && \
-    playwright install chromium
-
-# نسخ المتطلبات وتثبيتها
+# نسخ الملفات المطلوبة
 COPY requirements.txt .
+
+# تثبيت المتطلبات
 RUN pip install --no-cache-dir -r requirements.txt
 
-# نسخ الكود
+# إنشاء المجلدات اللازمة
+RUN mkdir -p /app/data/downloads /app/data/temp /app/data/logs
+
+# نسخ ملفات المشروع
 COPY . .
 
-# إنشاء مجلدات البيانات
-RUN mkdir -p data/temp data/downloads data/logs
+# فتح منفذ لفحص الحالة
+EXPOSE 8000
 
 # تشغيل البوت
 CMD ["python", "main.py"]
